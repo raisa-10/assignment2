@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>One Piece - AniVerse</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <!-- Header -->
+  <header>
+    <nav>
+      <div class="logo">
+        <a href="index.html">AniVerse</a>
+      </div>
+
+      <div class="menu-toggle" id="mobile-menu">
+        <span class="bar"></span>
+        <span class="bar"></span>
+        <span class="bar"></span>
+      </div>
+
+      <ul class="nav" id="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="explore.html">Explore</a></li>
+        <li><a href="contact.html">Contact Us</a></li>
+        <li><a href="about.html">About</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- Anime Detail Section -->
+  <section class="anime-detail">
+    <div class="detail-left">
+      <h1>One Piece</h1>
+      <p class="overview">
+        Monkey D. Luffy sets out on a grand adventure across the seas with his crew, the Straw Hat Pirates,
+        in search of the legendary treasure known as One Piece. Along the way, they battle fierce enemies,
+        uncover mysteries, and form unbreakable bonds.
+      </p>
+
+      <div class="ratings">
+        <h3>⭐ Ratings: 9.4/10</h3>
+        <p>Genre: Adventure, Fantasy, Comedy</p>
+        <p>Studio: Toei Animation</p>
+      </div>
+
+      <div class="reviews">
+        <h3>💬 Reviews</h3>
+        <p>“An epic tale of friendship and freedom.”</p>
+        <p>“The world-building is unmatched.”</p>
+        <p>“Over 1000 episodes and still going strong!”</p>
+      </div>
+    </div>
+
+    <div class="detail-right">
+      <img src="images/anime5.jpg" alt="One Piece Poster" />
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <p>&copy; 2025 AniVerse. All Rights Reserved.</p>
+  </footer>
+
+  <!-- Script -->
+  <script>
+    const hamburger = document.getElementById('mobile-menu');
+    const navLinks = document.getElementById('nav-links');
+    hamburger.addEventListener('click', () => {
+      navLinks.classList.toggle('showing');
+      hamburger.classList.toggle('active');
+    });
+  </script>
+
+</body>
+</html>

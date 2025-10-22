@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>AniVerse - Anime World</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+<header>
+  <nav>
+    <!-- Logo -->
+    <div class="logo">
+      <a href="index.html">AniVerse</a>
+    </div>
+
+    <!-- Hamburger Menu -->
+    <div class="menu-toggle" id="mobile-menu">
+      <span class="bar"></span>
+      <span class="bar"></span>
+      <span class="bar"></span>
+    </div>
+
+    <!-- Navigation Links -->
+    <ul class="nav" id="nav-links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="explore.html">Explore</a></li>
+      <li><a href="contact.html">Contact Us</a></li>
+    </ul>
+  </nav>
+</header>
+
+<!-- Slider -->
+<section class="slider">
+  <button class="arrow left" id="prevBtn">&#10094;</button>
+  <div class="slider-images" id="sliderImages">
+    <img src="images/a11.jpg" alt="Demon Slayer">
+    <img src="images/a2.jpg" alt="Attack on Titan">
+    <img src="images/a3.jpg" alt="Jujutsu Kaisen">
+    <img src="images/a4.jpg" alt="Death Note">
+    <img src="images/a5.jpg" alt="One Piece">
+    <img src="images/a6.jpg" alt="Chainsaw Man">
+  </div>
+  <button class="arrow right" id="nextBtn">&#10095;</button>
+</section>
+
+<!-- Anime Gallery -->
+<section class="anime-gallery">
+  <h2>Popular Anime</h2>
+  <div class="gallery-container">
+    <a href="demon-slayer.html" class="anime-card">
+      <img src="images/anime1.jpg" alt="Demon Slayer">
+      <h3>Demon Slayer</h3>
+    </a>
+    <a href="aot.html" class="anime-card">
+      <img src="images/anime2.jpg" alt="Attack on Titan">
+      <h3>Attack on Titan</h3>
+    </a>
+    <a href="jk.html" class="anime-card">
+      <img src="images/anime3.jpg" alt="Jujutsu Kaisen">
+      <h3>Jujutsu Kaisen</h3>
+    </a>
+    <a href="dn.html" class="anime-card">
+      <img src="images/anime4.jpg" alt="Death Note">
+      <h3>Death Note</h3>
+    </a>
+    <a href="onepiece.html" class="anime-card">
+      <img src="images/anime5.jpg" alt="One Piece">
+      <h3>One Piece</h3>
+    </a>
+    <a href="chainsawman.html" class="anime-card">
+      <img src="images/anime6.jpg" alt="Chainsaw Man">
+      <h3>Chainsaw Man</h3>
+    </a>
+  </div>
+</section>
+
+<!-- Footer -->
+<footer>
+  <p>&copy; 2025 AniVerse. All Rights Reserved.</p>
+</footer>
+
+<script>
+  // Hamburger toggle
+  const mobileMenu = document.getElementById('mobile-menu');
+  const navLinks = document.getElementById('nav-links');
+  mobileMenu.addEventListener('click', () => {
+    navLinks.classList.toggle('showing');
+    mobileMenu.classList.toggle('active');
+  });
+
+  // Slider
+  const sliderImages = document.getElementById('sliderImages');
+  const prevBtn = document.getElementById('prevBtn');
+  const nextBtn = document.getElementById('nextBtn');
+  let index = 0;
+  const total = sliderImages.children.length;
+
+  function showSlide(idx) {
+    sliderImages.style.transform = `translateX(-${idx * 100}%)`;
+  }
+
+  prevBtn.addEventListener('click', () => {
+    index = (index === 0) ? total - 1 : index - 1;
+    showSlide(index);
+  });
+
+  nextBtn.addEventListener('click', () => {
+    index = (index === total - 1) ? 0 : index + 1;
+    showSlide(index);
+  });
+
+  setInterval(() => {
+    index = (index + 1) % total;
+    showSlide(index);
+  }, 5000);
+</script>
+
+</body>
+</html>

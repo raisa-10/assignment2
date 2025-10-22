@@ -1,0 +1,319 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AniVerse - Explore</title>
+  <link rel="stylesheet" href="style.css">
+  <style>
+    /* Explore Page Enhancements */
+
+    body {
+      font-family: 'Poppins', sans-serif;
+      background: #0b0c10;
+      color: #fff;
+      margin: 0;
+      overflow-x: hidden;
+    }
+
+    header {
+      background: #1f2833;
+      padding: 15px 30px;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+    }
+
+    nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .logo a {
+      color: #66fcf1;
+      font-size: 1.8em;
+      font-weight: 700;
+      text-decoration: none;
+      transition: 0.3s;
+    }
+
+    .logo a:hover {
+      color: #45a29e;
+    }
+
+    .nav {
+      list-style: none;
+      display: flex;
+      gap: 25px;
+    }
+
+    .nav li a {
+      text-decoration: none;
+      color: #c5c6c7;
+      font-weight: 500;
+      transition: 0.3s;
+    }
+
+    .nav li a:hover {
+      color: #66fcf1;
+    }
+
+    .menu-toggle {
+      display: none;
+      flex-direction: column;
+      cursor: pointer;
+      gap: 5px;
+    }
+
+    .bar {
+      width: 30px;
+      height: 3px;
+      background: #fff;
+      border-radius: 5px;
+    }
+
+    /* Explore Hero Section */
+    .explore-hero {
+      text-align: center;
+      padding: 80px 20px;
+      background: linear-gradient(to bottom right, #1f2833, #0b0c10);
+      animation: fadeIn 1.5s ease-in;
+    }
+
+    .explore-hero h1 {
+      font-size: 3em;
+      color: #66fcf1;
+      margin-bottom: 20px;
+    }
+
+    .explore-hero p {
+      color: #c5c6c7;
+      max-width: 800px;
+      margin: 0 auto;
+      font-size: 1.1em;
+      line-height: 1.8;
+    }
+
+    /* Anime Categories */
+ .anime-categories {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 30px;
+  padding: 50px 60px 20px; /* reduced bottom padding from 50px to 20px */
+}
+
+    .category-card {
+      background: #1f2833;
+      border-radius: 15px;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+      overflow: hidden;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .category-card:hover {
+      transform: translateY(-10px);
+      box-shadow: 0 8px 25px rgba(102, 252, 241, 0.3);
+    }
+
+    .category-card img {
+      width: 100%;
+      height: 200px;
+      object-fit: cover;
+    }
+
+    .category-card .content {
+      padding: 20px;
+      text-align: center;
+    }
+
+    .category-card h3 {
+      color: #66fcf1;
+      margin-bottom: 10px;
+    }
+
+    .category-card p {
+      color: #c5c6c7;
+      font-size: 0.95em;
+      line-height: 1.5;
+    }
+/* Featured Section */
+.featured {
+  text-align: center;
+  padding: 20px 30px; /* reduced top padding from 80px to 60px */
+  background: linear-gradient(180deg, #0b0c10 0%, #1f2833 100%);
+}
+
+.featured h2 {
+  color: #66fcf1;
+  font-size: 2.5em;
+  margin-bottom: 20px;
+}
+
+.featured p {
+  color: #c5c6c7;
+  font-size: 1.1em;
+  margin: 0 auto 40px; /* kept consistent and compact */
+  max-width: 800px;
+}
+
+.featured button {
+  background: #66fcf1;
+  color: #0b0c10;
+  border: none;
+  padding: 12px 25px;
+  border-radius: 8px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+.featured button:hover {
+  background: #45a29e;
+}
+
+    /* Footer */
+    footer {
+      background: #1f2833;
+      text-align: center;
+      padding: 20px;
+      color: #c5c6c7;
+      font-size: 0.9em;
+    }
+
+    /* Animations */
+    @keyframes fadeIn {
+      from {opacity: 0; transform: translateY(20px);}
+      to {opacity: 1; transform: translateY(0);}
+    }
+
+    /* Responsive Design */
+    @media (max-width: 768px) {
+      .menu-toggle { display: flex; }
+      .nav {
+        position: absolute;
+        top: 70px;
+        right: 0;
+        background: #0b0c10;
+        flex-direction: column;
+        width: 200px;
+        display: none;
+      }
+      .nav.showing { display: flex; }
+      .nav li { text-align: center; padding: 15px 0; }
+      .explore-hero h1 { font-size: 2em; }
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- Header -->
+  <header>
+    <nav>
+      <div class="logo"><a href="index.html">AniVerse</a></div>
+      <div class="menu-toggle" id="mobile-menu">
+        <span class="bar"></span>
+        <span class="bar"></span>
+        <span class="bar"></span>
+      </div>
+      <ul class="nav" id="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="explore.html" class="active">Explore</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- Explore Hero Section -->
+  <section class="explore-hero">
+    <h1>Explore the World of Anime</h1>
+    <p>Dive into a vast collection of anime series, from legendary classics to the latest trending shows. Discover genres, explore characters, and ignite your inner otaku spirit!</p>
+  </section>
+
+  <!-- Anime Categories Section -->
+  <section class="anime-categories">
+    <div class="category-card">
+      <img src="images/shonen.jpg" alt="Shonen Anime">
+      <div class="content">
+        <h3>Shonen</h3>
+        <p>Action-packed adventures with powerful heroes — from Naruto to Demon Slayer, experience the thrill of youth and courage.</p>
+      </div>
+    </div>
+
+    <div class="category-card">
+      <img src="images/shoujo.jpg" alt="Shoujo Anime">
+      <div class="content">
+        <h3>Shoujo</h3>
+        <p>Romance, friendship, and emotions at their peak. Get lost in the charm of heartwarming stories.</p>
+      </div>
+    </div>
+
+    <div class="category-card">
+      <img src="images/isekai.jpg" alt="Isekai Anime">
+      <div class="content">
+        <h3>Isekai</h3>
+        <p>Transported to another world! Embark on magical journeys filled with fantasy, danger, and adventure.</p>
+      </div>
+    </div>
+
+    <div class="category-card">
+      <img src="images/sliceoflife.jpg" alt="Slice of Life">
+      <div class="content">
+        <h3>Slice of Life</h3>
+        <p>Simple yet beautiful everyday stories that make you smile, cry, and reflect on life.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Featured Section -->
+  <section class="featured">
+  <h2>Featured This Week</h2>
+  <p>Check out this week’s most popular anime series — handpicked for fans who live and breathe anime!</p>
+
+  <div class="featured-gallery">
+    <div class="featured-card">
+      <img src="images/a1.jpg" alt="Demon Slayer">
+      <h3>Demon Slayer</h3>
+      <p>Experience the stunning visuals and heartfelt story of Tanjiro’s fight against demons.</p>
+    </div>
+
+    <div class="featured-card">
+      <img src="images/a2.jpg" alt="Attack on Titan">
+      <h3>Attack on Titan</h3>
+      <p>A tale of humanity’s struggle for freedom in a world ruled by fearsome Titans.</p>
+    </div>
+
+    <div class="featured-card">
+      <img src="images/a3.jpg" alt="Jujutsu Kaisen">
+      <h3>Jujutsu Kaisen</h3>
+      <p>Dark curses, intense battles, and unforgettable characters — pure anime brilliance.</p>
+    </div>
+
+    <div class="featured-card">
+      <img src="images/a4.jpg" alt="Death Note">
+      <h3>Death Note</h3>
+      <p>The mind game between Light and L is the ultimate battle of justice and morality.</p>
+    </div>
+  </div>
+</section>
+
+
+  <!-- Footer -->
+  <footer>
+    <p>&copy; 2025 AniVerse. All Rights Reserved.</p>
+  </footer>
+
+  <!-- Script for Hamburger -->
+  <script>
+    const hamburger = document.querySelector('.menu-toggle');
+    const navLinks = document.querySelector('.nav');
+
+    hamburger.addEventListener('click', () => {
+      navLinks.classList.toggle('showing');
+      hamburger.classList.toggle('active');
+    });
+  </script>
+</body>
+</html>

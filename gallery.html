@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Gallery | AniWorld</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header>
+    <div class="logo">Ani<span>World</span></div>
+    <nav class="nav-menu" id="navMenu">
+      <a href="index.html">Home</a>
+      <a href="animes.html">Anime List</a>
+      <a href="gallery.html" class="active">Gallery</a>
+      <a href="contact.html">Contact Us</a>
+      <a href="about.html">About</a>
+    </nav>
+    <div class="hamburger" id="hamburger"><span></span><span></span><span></span></div>
+  </header>
+
+  <section class="gallery-section">
+    <h2>Anime Gallery</h2>
+    <div class="banner">
+      <button class="slide-btn left" id="prev">&#10094;</button>
+      <div class="slider-container">
+        <div class="slides" id="slides">
+          <img src="images/a1.jpg" alt="Demon Slayer">
+          <img src="images/a2.jpg" alt="Jujutsu Kaisen">
+          <img src="images/a.jpg" alt="Attack on Titan">
+          <img src="images/a4.jpg" alt="Death Note">
+          <img src="images/a5.jpg" alt="One Piece">
+          <img src="images/a6.jpg" alt="Chainsaw Man">
+        </div>
+      </div>
+      <button class="slide-btn right" id="next">&#10095;</button>
+    </div>
+  </section>
+
+  <footer><p>&copy; 2025 AniWorld</p></footer>
+  <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AniVerse - About</title>
+  <link rel="stylesheet" href="style.css">
+  <style>
+    body {
+      font-family: 'Poppins', sans-serif;
+      background: #0b0c10;
+      color: #fff;
+      margin: 0;
+      overflow-x: hidden;
+    }
+
+    header {
+      background: #1f2833;
+      padding: 15px 30px;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+    }
+
+    nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .logo a {
+      color: #66fcf1;
+      font-size: 1.8em;
+      font-weight: 700;
+      text-decoration: none;
+      transition: 0.3s;
+    }
+
+    .logo a:hover {
+      color: #45a29e;
+    }
+
+    .nav {
+      list-style: none;
+      display: flex;
+      gap: 25px;
+    }
+
+    .nav li a {
+      text-decoration: none;
+      color: #c5c6c7;
+      font-weight: 500;
+      transition: 0.3s;
+    }
+
+    .nav li a:hover,
+    .nav li a.active {
+      color: #66fcf1;
+    }
+
+    .menu-toggle {
+      display: none;
+      flex-direction: column;
+      cursor: pointer;
+      gap: 5px;
+    }
+
+    .bar {
+      width: 30px;
+      height: 3px;
+      background: #fff;
+      border-radius: 5px;
+    }
+
+    /* About Hero Section */
+    .about-hero {
+      text-align: center;
+      padding: 80px 20px;
+      background: linear-gradient(to bottom right, #1f2833, #0b0c10);
+      animation: fadeIn 1.2s ease-in;
+    }
+
+    .about-hero h1 {
+      font-size: 3em;
+      color: #66fcf1;
+      margin-bottom: 20px;
+    }
+
+    .about-hero p {
+      color: #c5c6c7;
+      max-width: 800px;
+      margin: 0 auto;
+      font-size: 1.1em;
+      line-height: 1.8;
+    }
+
+    /* Mission Section */
+    .mission {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: center;
+      gap: 40px;
+      padding: 80px 60px;
+    }
+
+    .mission img {
+      width: 400px;
+      border-radius: 15px;
+      box-shadow: 0 10px 25px rgba(0,0,0,0.4);
+      transition: transform 0.3s ease;
+    }
+
+    .mission img:hover {
+      transform: scale(1.05);
+    }
+
+    .mission-text {
+      max-width: 600px;
+    }
+
+    .mission-text h2 {
+      color: #66fcf1;
+      margin-bottom: 20px;
+      font-size: 2em;
+    }
+
+    .mission-text p {
+      color: #c5c6c7;
+      font-size: 1em;
+      line-height: 1.7;
+    }
+
+    /* Team Section */
+    .team {
+      text-align: center;
+      padding: 70px 20px;
+      background: #1f2833;
+    }
+
+    .team h2 {
+      color: #66fcf1;
+      font-size: 2.5em;
+      margin-bottom: 30px;
+    }
+
+    .team-members {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 30px;
+      max-width: 1000px;
+      margin: auto;
+    }
+
+    .member {
+      background: #0b0c10;
+      border-radius: 15px;
+      padding: 25px;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+      transition: transform 0.3s ease;
+    }
+
+    .member:hover {
+      transform: translateY(-10px);
+    }
+
+    .member img {
+      width: 120px;
+      height: 120px;
+      border-radius: 50%;
+      margin-bottom: 15px;
+      object-fit: cover;
+      border: 3px solid #66fcf1;
+    }
+
+    .member h3 {
+      color: #66fcf1;
+      margin-bottom: 5px;
+    }
+
+    .member p {
+      color: #c5c6c7;
+      font-size: 0.9em;
+    }
+
+    footer {
+      background: #1f2833;
+      text-align: center;
+      padding: 20px;
+      color: #c5c6c7;
+      font-size: 0.9em;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    /* Responsive */
+    @media (max-width: 768px) {
+      .menu-toggle { display: flex; }
+      .nav {
+        position: absolute;
+        top: 70px;
+        right: 0;
+        background: #0b0c10;
+        flex-direction: column;
+        width: 200px;
+        display: none;
+      }
+      .nav.showing { display: flex; }
+      .nav li { text-align: center; padding: 15px 0; }
+      .about-hero h1 { font-size: 2.2em; }
+      .mission { padding: 50px 20px; }
+      .mission img { width: 90%; }
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- Header -->
+  <header>
+    <nav>
+      <div class="logo"><a href="index.html">AniVerse</a></div>
+      <div class="menu-toggle" id="mobile-menu">
+        <span class="bar"></span>
+        <span class="bar"></span>
+        <span class="bar"></span>
+      </div>
+      <ul class="nav" id="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html" class="active">About</a></li>
+        <li><a href="explore.html">Explore</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- About Section -->
+  <section class="about-hero">
+    <h1>About AniVerse</h1>
+    <p>AniVerse is a space built for anime enthusiasts worldwide — a hub to explore anime worlds, read about characters, and connect with fellow fans. From classic series to modern masterpieces, AniVerse celebrates the creativity, emotion, and power of anime storytelling.</p>
+  </section>
+
+  <!-- Mission Section -->
+  <section class="mission">
+    <img src="images/collage.jpg" alt="Anime collage">
+    <div class="mission-text">
+      <h2>Our Mission</h2>
+      <p>Our mission is to unite anime fans across the globe. AniVerse aims to provide a platform where people can learn about new shows, share opinions, and find inspiration through stories that transcend cultures. Whether you're new to anime or a seasoned otaku, AniVerse welcomes you!</p>
+    </div>
+  </section>
+    
+  <!-- Footer -->
+  <footer>
+    <p>&copy; 2025 AniVerse. All Rights Reserved.</p>
+  </footer>
+
+  <!-- JS -->
+  <script>
+  const hamburger = document.querySelector('.menu-toggle');
+  const navLinks = document.querySelector('.nav');
+
+  hamburger.addEventListener('click', () => {
+    navLinks.classList.toggle('showing');
+    hamburger.classList.toggle('active');
+  });
+</script>
+
+
+  </script>
+  
+</body>
+</html>

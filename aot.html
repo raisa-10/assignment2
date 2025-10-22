@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Attack on Titan - AniVerse</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <!-- Header -->
+  <header>
+    <nav>
+      <div class="logo">
+        <a href="index.html">AniVerse</a>
+      </div>
+
+      <div class="menu-toggle" id="mobile-menu">
+        <span class="bar"></span>
+        <span class="bar"></span>
+        <span class="bar"></span>
+      </div>
+
+      <ul class="nav" id="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="explore.html">Explore</a></li>
+        <li><a href="contact.html">Contact Us</a></li>
+        <li><a href="about.html">About</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- Anime Details -->
+  <section class="anime-detail">
+    <div class="detail-left">
+      <h1>Attack on Titan</h1>
+      <p class="overview">
+        Humanity’s last remnants live within giant walled cities to protect themselves from Titans —
+        gigantic humanoid creatures that devour humans. Eren Yeager vows to eradicate the Titans
+        after witnessing the destruction of his hometown and the death of his mother.
+      </p>
+
+      <div class="ratings">
+        <h3>⭐ Ratings: 9.5/10</h3>
+        <p>Genre: Action, Drama, Fantasy</p>
+        <p>Studio: MAPPA / Wit Studio</p>
+      </div>
+
+      <div class="reviews">
+        <h3>💬 Reviews</h3>
+        <p>“A masterpiece of storytelling and emotion.”</p>
+        <p>“Intense and full of unexpected twists.”</p>
+        <p>“An anime that defined a generation.”</p>
+      </div>
+    </div>
+
+    <div class="detail-right">
+      <img src="images/anime2.jpg" alt="Attack on Titan Poster" />
+    </div>
+  </section>
+
+  <footer>
+    <p>&copy; 2025 AniVerse. All Rights Reserved.</p>
+  </footer>
+
+  <script>
+    const hamburger = document.getElementById('mobile-menu');
+    const navLinks = document.getElementById('nav-links');
+    hamburger.addEventListener('click', () => {
+      navLinks.classList.toggle('showing');
+      hamburger.classList.toggle('active');
+    });
+  </script>
+
+</body>
+</html>

@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Chainsaw Man - AniVerse</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <header>
+    <nav>
+      <div class="logo">
+        <a href="index.html">AniVerse</a>
+      </div>
+
+      <div class="menu-toggle" id="mobile-menu">
+        <span class="bar"></span>
+        <span class="bar"></span>
+        <span class="bar"></span>
+      </div>
+
+      <ul class="nav" id="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="explore.html">Explore</a></li>
+        <li><a href="contact.html">Contact Us</a></li>
+        <li><a href="about.html">About</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <section class="anime-detail">
+    <div class="detail-left">
+      <h1>Chainsaw Man</h1>
+      <p class="overview">
+        Denji, a poor young man with a pet devil named Pochita, becomes a devil hunter to pay off his late father’s debts.
+        After a tragic betrayal, Pochita merges with Denji, turning him into Chainsaw Man — part human, part devil, all chaos.
+      </p>
+
+      <div class="ratings">
+        <h3>⭐ Ratings: 8.8/10</h3>
+        <p>Genre: Action, Horror, Dark Fantasy</p>
+        <p>Studio: MAPPA</p>
+      </div>
+
+      <div class="reviews">
+        <h3>💬 Reviews</h3>
+        <p>“Bloody brilliant and brutally honest.”</p>
+        <p>“Denji’s story is both tragic and hilarious.”</p>
+        <p>“MAPPA nailed the tone perfectly.”</p>
+      </div>
+    </div>
+
+    <div class="detail-right">
+      <img src="images/anime6.jpg" alt="Chainsaw Man Poster" />
+    </div>
+  </section>
+
+  <footer>
+    <p>&copy; 2025 AniVerse. All Rights Reserved.</p>
+  </footer>
+
+  <script>
+    const hamburger = document.getElementById('mobile-menu');
+    const navLinks = document.getElementById('nav-links');
+    hamburger.addEventListener('click', () => {
+      navLinks.classList.toggle('showing');
+      hamburger.classList.toggle('active');
+    });
+  </script>
+
+</body>
+</html>

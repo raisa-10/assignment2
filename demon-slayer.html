@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Demon Slayer - AniVerse</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <!-- Header -->
+  <header>
+    <nav>
+      <div class="logo">
+        <a href="index.html">AniVerse</a>
+      </div>
+
+      <!-- Hamburger Menu -->
+      <div class="menu-toggle" id="mobile-menu">
+        <span class="bar"></span>
+        <span class="bar"></span>
+        <span class="bar"></span>
+      </div>
+
+      <!-- Navigation Links -->
+      <ul class="nav" id="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="explore.html">Explore</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="contact.html">Contact Us</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- Main Content -->
+  <section class="anime-detail">
+    <div class="detail-left">
+      <h1>Demon Slayer</h1>
+      <p class="overview">
+        “Demon Slayer: Kimetsu no Yaiba” follows Tanjiro Kamado, a kind-hearted boy
+        who becomes a demon slayer after his family is slaughtered by demons and
+        his sister Nezuko is transformed into one. The story is filled with breathtaking
+        animation, deep emotions, and intense sword fights.
+      </p>
+
+      <div class="ratings">
+        <h3>⭐ Ratings: 9.2/10</h3>
+        <p>Genre: Action, Supernatural, Adventure</p>
+        <p>Studio: Ufotable</p>
+      </div>
+
+      <div class="reviews">
+        <h3>💬 Reviews</h3>
+        <p>“Absolutely stunning visuals and emotional storytelling!”</p>
+        <p>“The animation quality is unmatched.”</p>
+        <p>“A must-watch for every anime lover.”</p>
+      </div>
+    </div>
+
+    <div class="detail-right">
+      <img src="images/anime1.jpg" alt="Demon Slayer Poster" />
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <p>&copy; 2025 AniVerse. All Rights Reserved.</p>
+  </footer>
+
+  <!-- Script -->
+  <script>
+    // Hamburger Menu Toggle
+    const hamburger = document.getElementById('mobile-menu');
+    const navLinks = document.getElementById('nav-links');
+
+    hamburger.addEventListener('click', () => {
+      navLinks.classList.toggle('showing');
+      hamburger.classList.toggle('active');
+    });
+  </script>
+
+</body>
+</html>
