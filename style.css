@@ -591,3 +591,431 @@ button:hover {
     font-size: 1.4rem;
   }
 }
+/* Anime Gallery */
+.anime-gallery {
+  text-align: center;
+  padding: 50px 20px;
+  background-color: #0b0c10;
+}
+
+.anime-gallery h2 {
+  color: #66fcf1;
+  font-size: 2em;
+  margin-bottom: 30px;
+}
+
+.gallery-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 20px;
+  justify-items: center;
+}
+
+.anime-card {
+  background-color: #1f2833;
+  border-radius: 15px;
+  overflow: hidden;
+  transition: transform 0.3s ease;
+  text-decoration: none;
+  color: white;
+  width: 100%;
+  max-width: 250px;
+}
+
+.anime-card img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+.anime-card:hover {
+  transform: scale(1.05);
+}
+
+/* ✅ MEDIA QUERY — For Phones: Show 2 anime side by side */
+@media (max-width: 768px) {
+  .gallery-container {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* ✅ For very small phones (optional, one per row if too tight) */
+@media (max-width: 400px) {
+  .gallery-container {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 10px;
+  }
+}
+/* General Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+
+body {
+  background-color: #0b0c10;
+  color: #c5c6c7;
+  line-height: 1.6;
+}
+
+/* Header */
+header {
+  background-color: #1f2833;
+  padding: 15px 30px;
+}
+
+.logo a {
+  color: #66fcf1;
+  font-size: 1.8em;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.nav {
+  list-style: none;
+  display: flex;
+  gap: 20px;
+}
+
+.nav li a {
+  text-decoration: none;
+  color: #fff;
+  font-weight: 500;
+  transition: color 0.3s ease;
+}
+
+.nav li a:hover {
+  color: #66fcf1;
+}
+
+/* Hamburger Menu */
+.menu-toggle {
+  display: none;
+  flex-direction: column;
+  cursor: pointer;
+}
+
+.bar {
+  height: 3px;
+  width: 25px;
+  background: #fff;
+  margin: 4px 0;
+  border-radius: 5px;
+}
+
+.showing {
+  display: block !important;
+}
+
+/* Anime Detail Section */
+.anime-detail {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 40px;
+  padding: 60px 10%;
+}
+
+.detail-left {
+  flex: 1;
+}
+
+.detail-left h1 {
+  color: #66fcf1;
+  font-size: 2.5em;
+  margin-bottom: 20px;
+}
+
+.detail-left p {
+  font-size: 1.1em;
+  margin-bottom: 15px;
+}
+
+.detail-right {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.detail-right img {
+  width: 80%;
+  max-width: 350px; /* ✅ Smaller image size */
+  border-radius: 15px;
+  box-shadow: 0 0 15px rgba(102, 252, 241, 0.4);
+}
+
+/* Footer */
+footer {
+  background-color: #1f2833;
+  color: #fff;
+  text-align: center;
+  padding: 15px;
+  margin-top: 40px;
+}
+
+/* ===========================
+   ✅ RESPONSIVE DESIGN
+   =========================== */
+
+/* Tablets */
+@media (max-width: 1024px) {
+  .anime-detail {
+    padding: 50px 8%;
+    gap: 30px;
+  }
+
+  .detail-left h1 {
+    font-size: 2.2em;
+  }
+
+  .detail-right img {
+    width: 75%;
+    max-width: 300px;
+  }
+}
+
+/* Phones */
+@media (max-width: 768px) {
+  nav ul.nav {
+    display: none;
+    flex-direction: column;
+    background: #1f2833;
+    width: 100%;
+    text-align: center;
+    margin-top: 10px;
+  }
+
+  .menu-toggle {
+    display: flex;
+  }
+
+  .anime-detail {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  .detail-right img {
+    width: 70%;
+    max-width: 250px;
+    margin-top: 20px;
+  }
+
+  .detail-left h1 {
+    font-size: 2em;
+  }
+
+  .detail-left p {
+    font-size: 1em;
+  }
+}
+
+/* Small Phones */
+@media (max-width: 480px) {
+  .detail-right img {
+    width: 80%;
+    max-width: 220px;
+  }
+
+  .detail-left h1 {
+    font-size: 1.7em;
+  }
+}
+/* 🌸 General Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+
+body {
+  background-color: #0b0c10;
+  color: #c5c6c7;
+  line-height: 1.6;
+}
+
+/* 🌸 Header Section */
+header {
+  background-color: #1f2833;
+  padding: 15px 30px;
+}
+
+.logo a {
+  color: #66fcf1;
+  font-size: 1.8em;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.nav {
+  list-style: none;
+  display: flex;
+  gap: 20px;
+}
+
+.nav li a {
+  text-decoration: none;
+  color: #fff;
+  font-weight: 500;
+  transition: color 0.3s ease;
+}
+
+.nav li a:hover {
+  color: #66fcf1;
+}
+
+/* 🌸 Hamburger Menu */
+.menu-toggle {
+  display: none;
+  flex-direction: column;
+  cursor: pointer;
+}
+
+.bar {
+  height: 3px;
+  width: 25px;
+  background: #fff;
+  margin: 4px 0;
+  border-radius: 5px;
+}
+
+/* 🌸 Anime Detail Layout */
+.anime-detail {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 40px;
+  padding: 60px 10%;
+}
+
+.detail-left {
+  flex: 1;
+}
+
+.detail-left h1 {
+  color: #66fcf1;
+  font-size: 2.5em;
+  margin-bottom: 20px;
+}
+
+.detail-left p {
+  font-size: 1.1em;
+  margin-bottom: 15px;
+}
+
+.detail-right {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.detail-right img {
+  width: 75%;
+  max-width: 320px; /* ✅ Smaller, consistent size */
+  border-radius: 15px;
+  box-shadow: 0 0 15px rgba(102, 252, 241, 0.4);
+}
+
+/* 🌸 Footer */
+footer {
+  background-color: #1f2833;
+  color: #fff;
+  text-align: center;
+  padding: 15px;
+  margin-top: 40px;
+}
+
+/* ===========================
+   ✅ RESPONSIVE DESIGN
+   =========================== */
+
+/* 💻 Laptops / Tablets */
+@media (max-width: 1024px) {
+  .anime-detail {
+    padding: 50px 8%;
+    gap: 30px;
+  }
+
+  .detail-left h1 {
+    font-size: 2.2em;
+  }
+
+  .detail-right img {
+    width: 70%;
+    max-width: 280px;
+  }
+}
+
+/* 📱 Tablets & Large Phones */
+@media (max-width: 768px) {
+  nav ul.nav {
+    display: none;
+    flex-direction: column;
+    background: #1f2833;
+    width: 100%;
+    text-align: center;
+    margin-top: 10px;
+  }
+
+  .menu-toggle {
+    display: flex;
+  }
+
+  .showing {
+    display: flex !important;
+  }
+
+  .anime-detail {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    padding: 40px 6%;
+  }
+
+  .detail-right img {
+    width: 65%;
+    max-width: 250px;
+    margin-top: 20px;
+  }
+
+  .detail-left h1 {
+    font-size: 2em;
+  }
+
+  .detail-left p {
+    font-size: 1em;
+  }
+}
+
+/* 📱 Small Phones */
+@media (max-width: 480px) {
+  .detail-right img {
+    width: 80%;
+    max-width: 220px;
+  }
+
+  .detail-left h1 {
+    font-size: 1.7em;
+  }
+
+  .nav {
+    gap: 10px;
+  }
+}
