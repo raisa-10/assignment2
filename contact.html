@@ -5,6 +5,85 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Contact Us - Anime Website</title>
   <link rel="stylesheet" href="style.css">
+  <style>
+    form {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 15px;
+      max-width: 500px;
+      margin: 0 auto;
+    }
+
+    form input, form textarea, form button {
+      width: 100%;
+      padding: 10px;
+      border-radius: 8px;
+      border: none;
+      outline: none;
+      font-family: inherit;
+    }
+
+    input, textarea {
+      background: #1c1f24;
+      color: #fff;
+      border: 1px solid #444;
+    }
+
+    button {
+      background: #66fcf1;
+      color: #fff;
+      cursor: pointer;
+      transition: 0.3s;
+    }
+
+    button:hover {
+      background: #66fcf1;
+    }
+
+    /* File input and preview inside same layout */
+    .file-field {
+      display: flex;
+      flex-direction: column;
+      width: 100%;
+    }
+
+    .file-field label {
+      color: #66fcf1;
+      font-weight: bold;
+      margin-bottom: 5px;
+    }
+
+    .file-field input[type="file"] {
+      padding: 8px;
+      background: #1c1f24;
+      color: #fff;
+      border: 1px solid #444;
+      border-radius: 8px;
+      cursor: pointer;
+    }
+
+    /* Preview */
+    .preview {
+      margin-top: 10px;
+      text-align: center;
+      display: none;
+    }
+
+    .preview img, .preview iframe {
+      max-width: 100%;
+      max-height: 300px;
+      border-radius: 10px;
+      margin-top: 10px;
+      box-shadow: 0 0 8px rgba(255, 255, 255, 0.15);
+    }
+
+    #successMsg {
+      display: none;
+      color: #00ff7f;
+      font-weight: bold;
+    }
+  </style>
 </head>
 <body>
 
@@ -28,14 +107,25 @@
   <!-- Main Content -->
   <main>
     <h1>Contact Us</h1>
-    <p class="intro">Have questions, suggestions, or feedback? Send us a message!</p>
+    <p class="intro">Have questions, suggestions, or feedback? Fill out the form below.</p>
 
     <form id="contactForm">
       <input type="text" id="name" name="name" placeholder="Your Name" required>
       <input type="email" id="email" name="email" placeholder="Your Email" required>
-      <textarea id="message" name="message" rows="6" placeholder="Your Message" required></textarea>
+      <textarea id="message" name="message" rows="5" placeholder="Your Message" required></textarea>
+
+      <!-- File Upload (Integrated) -->
+      <div class="file-field">
+        <label for="fileUpload">Attach Image or PDF (required):</label>
+        <input type="file" id="fileUpload" accept="image/*,.pdf" required>
+        <div class="preview" id="previewContainer">
+          <img id="imagePreview" alt="Image Preview" style="display:none;">
+          <iframe id="pdfPreview" style="display:none;"></iframe>
+        </div>
+      </div>
+
       <button type="submit">Send Message</button>
-      <p class="success" id="successMsg">Thank you! Your message has been sent.</p>
+      <p id="successMsg">Thank you! Your message has been sent.</p>
     </form>
   </main>
 
@@ -56,6 +146,7 @@
     // Contact Form Validation & Submission
     const form = document.getElementById('contactForm');
     const successMsg = document.getElementById('successMsg');
+    const fileInput = document.getElementById('fileUpload');
 
     form.addEventListener('submit', function(e) {
       e.preventDefault();
@@ -63,20 +154,53 @@
       const name = document.getElementById('name').value.trim();
       const email = document.getElementById('email').value.trim();
       const message = document.getElementById('message').value.trim();
+      const file = fileInput.files[0];
 
-      if (!name || !email || !message) {
-        alert('Please fill in all fields!');
+      if (!name || !email || !message || !file) {
+        alert('Please fill in all fields and attach a file!');
         return;
       }
 
-      // Show success message
+      if (!file.type.startsWith('image/') && file.type !== 'application/pdf') {
+        alert('Please upload only an image or a PDF file!');
+        return;
+      }
+
       successMsg.style.display = 'block';
 
-      // Reset form after 2 seconds
       setTimeout(() => {
         form.reset();
         successMsg.style.display = 'none';
+        document.getElementById('previewContainer').style.display = 'none';
       }, 2000);
+    });
+
+    // File Preview
+    const previewContainer = document.getElementById('previewContainer');
+    const imagePreview = document.getElementById('imagePreview');
+    const pdfPreview = document.getElementById('pdfPreview');
+
+    fileInput.addEventListener('change', function() {
+      const file = this.files[0];
+      if (!file) return;
+
+      const fileType = file.type;
+      const fileURL = URL.createObjectURL(file);
+
+      previewContainer.style.display = 'block';
+      imagePreview.style.display = 'none';
+      pdfPreview.style.display = 'none';
+
+      if (fileType.startsWith('image/')) {
+        imagePreview.src = fileURL;
+        imagePreview.style.display = 'block';
+      } else if (fileType === 'application/pdf') {
+        pdfPreview.src = fileURL;
+        pdfPreview.style.display = 'block';
+      } else {
+        alert('Please upload only an image or a PDF file!');
+        previewContainer.style.display = 'none';
+      }
     });
   </script>
 </body>
